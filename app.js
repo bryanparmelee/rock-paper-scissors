@@ -5,19 +5,23 @@ const computerPlay = () => {
 }
 
 
-
-const playRound = (playerSelection, computerSelection) => {
+const userChoice = () => {
     const regex = /rock|paper|scissors/i;
     let response = prompt("Rock, Paper or Scissors?");
     if (!regex.test(response)) {
-        alert("I did not recognize that response. PLease try again.");
-    } else {
-        playerSelection = response.toUpperCase();
-    }
+        alert("I did not recognize that response. Please try again.");
+        userChoice();
+        } else {
+        return response.toUpperCase();
+        }    
+    } 
 
-    computerSelection = computerPlay();
 
-    if (playerSelection === computerSelection) {
+
+
+
+const playRound = (playerSelection, computerSelection) => {
+     if (playerSelection === computerSelection) {
             return "Tie! Choose again.";
     } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
         return "You lose! Paper beats Rock";
@@ -32,6 +36,8 @@ const playRound = (playerSelection, computerSelection) => {
     } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
         return "You win! Scissors beats Paper";
     }
+ 
 }
-
-playRound();
+computerSelection = computerPlay();
+playerSelection = userChoice();
+console.log(playRound(playerSelection, computerSelection));
