@@ -1,3 +1,11 @@
+const button = document.querySelectorAll('.choice');
+
+button.forEach((button) => {
+    button.addEventListener('click', () => {
+      console.log(button.id);  
+    })
+});
+
 const computerPlay = () => {
     let compChoice = ['ROCK', 'PAPER', 'SCISSORS'];
     let random = Math.floor(Math.random() * compChoice.length);
@@ -42,4 +50,3 @@ const game = () => {
     }
 }
 
-game();
