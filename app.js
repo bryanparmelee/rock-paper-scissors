@@ -70,29 +70,19 @@ const playRound = (playerSelection, computerSelection) => {
     compScore.textContent = cScore;
     if (uScore === 5) {
         alert("You win! Congrats!");
-        uScore = 0;
-        cScore = 0;
+        newGame();
     } else if (cScore === 5) {
         alert("You lose! Try again!");
-        uScore = 0;
-        cScore = 0;
+        newGame();
     }
 }
 
-// const game = () => {
-   
-//    if (uScore === 5) {
-//        alert("You win! Congrats!");
-//        uScore = 0;
-//        cScore = 0;
-//        game();
-//    } else if (cScore === 5) {
-//        alert("You lose! Try again!");
-//        uScore = 0;
-//        cScore = 0;
-//        game();
-//    }
-// }
-
-// game();
+const newGame = () => {
+    uScore = 0;
+    cScore = 0;
+    youScore.textContent = uScore;
+    compScore.textContent = cScore;
+    uChoice.setAttribute('src', '');
+    cChoice.setAttribute('src', '');
+}
 
